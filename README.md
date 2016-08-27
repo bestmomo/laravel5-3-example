@@ -9,10 +9,12 @@ It's an upgrade of [this repository](https://github.com/bestmomo/laravel5-exampl
 * `git clone https://github.com/bestmomo/laravel5-3-example.git projectname`
 * `cd projectname`
 * `composer install`
+* Create a *.env* file (copy of *.env.example*)
 * `php artisan key:generate`
 * Create a database and edit *.env*
 * `php artisan migrate --seed` to create and populate tables
 * Edit *.env* for emails configuration
+* Optionaly `npm install` to manage assets
 
 ### Include ###
 
