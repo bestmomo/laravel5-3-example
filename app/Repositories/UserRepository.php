@@ -120,19 +120,17 @@ class UserRepository extends BaseRepository
      */
     public function store($inputs, $confirmation_code = null)
     {
-        $user = new $this->model;
-
-        $user->password = bcrypt($inputs['password']);
+        $this->model->password = bcrypt($inputs['password']);
 
         if ($confirmation_code) {
-            $user->confirmation_code = $confirmation_code;
+            $this->model->confirmation_code = $confirmation_code;
         } else {
-            $user->confirmed = true;
+            $this->model->confirmed = true;
         }
 
-        $this->save($user, $inputs);
+        $this->save($this->model, $inputs);
 
-        return $user;
+        return $this->model;
     }
 
     /**

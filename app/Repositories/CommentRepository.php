@@ -41,15 +41,12 @@ class CommentRepository extends BaseRepository
      */
     public function store($inputs, $user_id)
     {
-        $comment = new $this->model;
+        $this->model->content = $inputs['comments'];
+        $this->model->post_id = $inputs['post_id'];
+        $this->model->user_id = $user_id;
 
-        $comment->content = $inputs['comments'];
-        $comment->post_id = $inputs['post_id'];
-        $comment->user_id = $user_id;
-
-        $comment->save();
+        $this->model->save();
     }
-
     /**
      * Update a comment.
      *
