@@ -24,6 +24,21 @@ class UserTest extends TestCase
     }
 
     /**
+     * Test users reports
+     *
+     * @return void
+     */
+    public function testUserReports()
+    {
+        $this->loginAdmin();
+
+        $this->visit('/user/report')
+            ->see('Reports')
+            ->see('GreatAdmin')
+            ->see('GreatRedactor');
+    }
+
+    /**
      * Test show/edit user
      *
      * @return void

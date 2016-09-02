@@ -30,7 +30,7 @@ class UserController extends Controller
      * Create a new UserController instance.
      *
      * @param  \App\Repositories\UserRepository $userRepository
-     
+
      * @return void
      */
     public function __construct(UserRepository $userRepository)
@@ -42,7 +42,7 @@ class UserController extends Controller
 
     /**
      * Display a listing users.
-     * 
+     *
      * @param  \App\Repositories\RoleRepository $roleRepository
      * @param  string  $role
      * @return \Illuminate\Http\Response
@@ -54,6 +54,19 @@ class UserController extends Controller
         $roles = $roleRepository->all();
 
         return view('back.users.index', compact('users', 'counts', 'roles'));
+    }
+
+    /**
+     * Show the reports in which it will list all of the author
+     *   and the number of posts each created
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function report()
+    {
+        $authors = $this->userRepository->getAuthorPostsWithOrder();
+
+        return view('back.users.report', compact('authors'));
     }
 
     /**
