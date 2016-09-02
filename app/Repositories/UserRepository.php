@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\User;
 use App\Models\Role;
+use DB;
 
 class UserRepository extends BaseRepository
 {
@@ -112,6 +113,23 @@ class UserRepository extends BaseRepository
     }
 
     /**
+     * Get blog authors, their number of blogs, the last created date, and title of their latest blog entry.
+     *
+     * @return Illuminate\Database\Eloquent\Builder
+     */
+    public function getAuthorPostsWithOrder()
+    {
+        $authors = $this->model
+            ->join('posts', 'posts.user_id', '=', 'users.id')
+            ->select(DB::raw('count(posts.id) as total_count'), 'username', 'posts.id', 'posts.created_at', 'posts.title')
+            ->orderBy('posts.created_at', 'asc')
+            ->groupBy('username')
+            ->get();
+
+        return $authors;
+    }
+
+    /**
      * Create a user.
      *
      * @param  array  $inputs
@@ -172,7 +190,7 @@ class UserRepository extends BaseRepository
     public function destroyUser(User $user)
     {
         $user->comments()->delete();
-        
+
         $user->delete();
     }
 

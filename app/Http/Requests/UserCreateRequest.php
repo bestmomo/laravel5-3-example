@@ -14,7 +14,7 @@ class UserCreateRequest extends Request
         return [
             'username' => 'bail|required|max:30|alpha|unique:users',
             'email' => 'bail|required|email|unique:users',
-            'password' => 'bail|required|min:8|confirmed'
+            'password' => 'bail|required|min:3|confirmed'
         ];
     }
 }

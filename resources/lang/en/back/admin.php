@@ -9,6 +9,7 @@ return [
     'users' => 'users',
     'see-all' => 'See all',
     'add' => 'Add',
+    'report' => 'Report',
     'messages' => 'Messages',
     'comments' => 'Comments',
     'medias' => 'Medias',

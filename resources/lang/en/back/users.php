@@ -24,5 +24,8 @@ return [
     'updated' => 'User updated.',
     'destroyed' => 'User destroyed.',
     'confirmed' => 'Confirmed',
-    'not-confirmed' => 'Not confirmed'
+    'not-confirmed' => 'Not confirmed',
+    'total_count' => 'Total created blogs',
+    'last_created_date' => 'Creation date of last blog',
+    'last_created_title' => 'Title of the last blog'
 ];

@@ -17,7 +17,7 @@ Route::get('admin', 'AdminController')->name('admin');
 // Medias
 Route::get('medias', 'FilemanagerController')->name('medias');
 
-// Blog 
+// Blog
 Route::get('blog/tag', 'BlogFrontController@tag');
 Route::get('blog/search', 'BlogFrontController@search');
 Route::get('articles', 'BlogFrontController@index');
@@ -43,13 +43,14 @@ Route::post('roles', 'RoleController@update');
 
 // Users
 Route::get('user/sort/{role?}', 'UserController@index');
+Route::get('user/report', 'UserController@report')->name('user.report');
 Route::resource('user', 'UserController', ['except' => 'index']);
 Route::put('uservalid/{id}', 'UserAjaxController@valid');
 Route::put('userseen/{user}', 'UserAjaxController@updateSeen');
 
-// Authentication 
+// Authentication
 Auth::routes();
 
-// Email confirmation 
+// Email confirmation
 Route::get('resend', 'Auth\RegisterController@resend');
 Route::get('confirm/{token}', 'Auth\RegisterController@confirm');
