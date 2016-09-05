@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use DB;
 use App\Models\User;
 use App\Models\Role;
 
@@ -189,5 +190,21 @@ class UserRepository extends BaseRepository
         $user->confirmed = true;
         $user->confirmation_code = null;
         $user->save();
+    }
+
+    /**
+     * Get report of blog authors
+     *
+     * @return Illuminate\Support\Collection
+     */
+    public function getBlogAuthorReport()
+    {
+        $query = $this->model
+            ->join('posts', 'posts.user_id', '=', 'users.id')
+            ->select(DB::raw('count(posts.id) as posts_count'), 'username', 'posts.id', 'posts.title', 'posts.created_at')
+            ->orderBy('posts.created_at', 'desc')
+            ->groupBy('username');
+
+        return $query->get();
     }
 }

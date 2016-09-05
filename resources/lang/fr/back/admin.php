@@ -16,5 +16,6 @@ return [
     'new-messages' => 'Nouveaux messages !',
     'new-registers' => 'Nouveaux inscrits !',
     'new-posts' => 'Nouveaux articles !',
-    'new-comments' => 'Nouveaux commentaires !'
+    'new-comments' => 'Nouveaux commentaires !',
+    'blog-report' => 'Rapport de blog'
 ];
