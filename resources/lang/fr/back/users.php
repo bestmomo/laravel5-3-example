@@ -26,6 +26,6 @@ return [
     'confirmed' => 'Confirmé',
     'not-confirmed' => 'Non confirmé',
     'posts-count' => 'Total des blogs',
-    'latest-blog-title' => 'Dernier blog titre',
+    'latest-blog-title' => 'Dernier titre de blog',
     'latest-blog-date' => 'Heure de publication'
 ];

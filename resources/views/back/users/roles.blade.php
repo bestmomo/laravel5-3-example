@@ -2,7 +2,7 @@
 
 @section('main')
 
-  @include('back.partials.entete', ['title' => trans('back/roles.dashboard'), 'icon' => 'user', 'fil' => link_to('user', trans('back/users.Users')) . ' / ' . trans('back/roles.roles')])
+  @include('back.partials.entete', ['title' => trans('back/roles.dashboard'), 'icon' => 'user', 'fil' => link_to('user/sort', trans('back/users.Users')) . ' / ' . trans('back/roles.roles')])
 
     <div class="col-sm-12">
         @if(session()->has('ok'))
