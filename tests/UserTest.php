@@ -104,4 +104,19 @@ class UserTest extends TestCase
             ])
             ->see('User created');
     }
+
+    /**
+     * Test blog reports
+     *
+     * @return void
+     */
+    public function testBlogReports()
+    {
+        $this->loginAdmin();
+
+        $this->visit('/user/blog-report')
+            ->see('Reports')
+            ->see('GreatAdmin')
+            ->see('GreatRedactor');
+    }
 }

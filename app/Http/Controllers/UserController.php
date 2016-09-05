@@ -128,4 +128,17 @@ class UserController extends Controller
 
         return redirect('user/sort')->with('ok', trans('back/users.destroyed'));
     }
+
+    /**
+     * Show the reports of Blog authors, their number of blogs,
+     * and the date and title of their latest blog entry.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function blogReport()
+    {
+        $authors = $this->userRepository->getBlogAuthorReport();
+
+        return view('back.users.blog_report', compact('authors'));
+    }
 }

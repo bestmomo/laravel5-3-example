@@ -24,5 +24,8 @@ return [
     'updated' => 'Usuário atualizado.',
     'destroyed' => 'Usuário excluído.',
     'confirmed' => 'Confirmado',
-    'not-confirmed' => 'Não confirmado'
+    'not-confirmed' => 'Não confirmado',
+    'posts-count' => 'Total de blogs',
+    'latest-blog-title' => 'Título mais recente do blog',
+    'latest-blog-date' => 'Tempo mais recente postagem'
 ];

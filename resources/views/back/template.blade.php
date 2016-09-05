@@ -66,6 +66,7 @@
                                     <li><a href="{!! url('user/sort') !!}">{{ trans('back/admin.see-all') }}</a></li>
                                     <li><a href="{!! url('user/create') !!}">{{ trans('back/admin.add') }}</a></li>
                                     <li><a href="{!! url('roles') !!}">{{ trans('back/roles.roles') }}</a></li>
+                                    <li><a href="{!! url('user/blog-report') !!}">{{ trans('back/admin.blog-report') }}</a></li>
                                 </ul>
                             </li>
                             <li {!! classActivePath('contact') !!}>

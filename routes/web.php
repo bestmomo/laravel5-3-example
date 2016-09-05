@@ -46,6 +46,7 @@ Route::get('user/sort/{role?}', 'UserController@index');
 Route::resource('user', 'UserController', ['except' => 'index']);
 Route::put('uservalid/{id}', 'UserAjaxController@valid');
 Route::put('userseen/{user}', 'UserAjaxController@updateSeen');
+Route::get('user/blog-report', 'UserController@blogReport')->name('user.blog.report');
 
 // Authentication 
 Auth::routes();

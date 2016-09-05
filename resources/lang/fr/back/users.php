@@ -24,5 +24,8 @@ return [
     'updated' => 'L\'utilisateur a bien été modifié.',
     'destroyed' => 'L\'utilisateur a bien été supprimé.',
     'confirmed' => 'Confirmé',
-    'not-confirmed' => 'Non confirmé'
+    'not-confirmed' => 'Non confirmé',
+    'posts-count' => 'Total des blogs',
+    'latest-blog-title' => 'Dernier blog titre',
+    'latest-blog-date' => 'Heure de publication'
 ];
