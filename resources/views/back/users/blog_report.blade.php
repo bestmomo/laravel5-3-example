@@ -14,8 +14,8 @@
           <thead>
               <tr>
                   <th>{{ trans('back/users.name') }}</th>
-                  <th>{{ trans('back/users.posts-count') }}</th>
                   <th>{{ trans('back/users.latest-blog-title') }}</th>
+                  <th>{{ trans('back/users.posts-count') }}</th>
                   <th>{{ trans('back/users.latest-blog-date') }}</th>
                   <th></th>
                   <th></th>
@@ -27,9 +27,9 @@
                   <td class="text-primary">
                       <strong>{{ $author->username }}</strong>
                   </td>
-                  <td>{{ $author->total_count }}</td>
-                  <td>{{ $author->created_at }}</td>
+                  <td>{{ $author->posts_count }}</td>
                   <td>{{ $author->title }}</td>
+                  <td>{{ $author->created_at }}</td>
               </tr>
             @endforeach
           </tbody>
