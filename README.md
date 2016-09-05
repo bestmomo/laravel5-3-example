@@ -9,7 +9,7 @@ It's an upgrade of [this repository](https://github.com/bestmomo/laravel5-exampl
 * `git clone https://github.com/bestmomo/laravel5-3-example.git projectname`
 * `cd projectname`
 * `composer install`
-* Type `touch database/database.sqlite`
+* `touch database/database.sqlite`
 * Copy *.env.example* to *.env*; set DB_DATABASE to the absolute path of the file created above
 * `php artisan key:generate`
 * `php artisan migrate --seed` to create and populate tables
@@ -38,7 +38,7 @@ It's an upgrade of [this repository](https://github.com/bestmomo/laravel5-exampl
 * Tags on posts
 * Contact us page
 * Admin dashboard with messages, users, posts, roles and comments
-* Users admin (roles filter, show, edit, delete, create)
+* Users admin (roles filter, show, edit, delete, create, blog report)
 * Posts admin (list with dynamic order, show, edit, delete, create)
 * Multi users medias gestion
 * Localization

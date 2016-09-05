@@ -10,11 +10,10 @@ use App\Models\Role;
 use App\Models\Post;
 use App\Models\Comment;
 use Storage;
-use App\Presenters\DateTimePresenter;
 
 class User extends Authenticatable
 {
-    use Notifiable, DateTimePresenter;
+    use Notifiable;
 
     /**
      * The attributes excluded from the model's JSON form.

@@ -21,9 +21,9 @@
                 <td class="text-primary">
                     <strong>{{ $author->username }}</strong>
                 </td>
-                <td>{{ $author->title }}</td>
+                <td>{{ $author->posts->first()->title }}</td>
                 <td>{{ $author->posts_count }}</td>
-                <td>{{ $author->created_at }}</td>
+                <td>{{ $author->posts->first()->created_at }}</td>
             </tr>
           @endforeach
         </tbody>

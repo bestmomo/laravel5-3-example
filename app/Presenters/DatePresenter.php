@@ -14,7 +14,7 @@ trait DatePresenter
      */
     public function getCreatedAtAttribute($date)
     {
-        return $this->getDateFormated($date);
+        return $this->getDateTimeFormated($date);
     }
 
     /**
@@ -25,7 +25,7 @@ trait DatePresenter
      */
     public function getUpdatedAtAttribute($date)
     {
-        return $this->getDateFormated($date);
+        return $this->getDateTimeFormated($date);
     }
 
     /**
@@ -34,8 +34,8 @@ trait DatePresenter
      * @param \Carbon\Carbon  $date
      * @return string
      */
-    protected function getDateFormated($date)
+    protected function getDateTimeFormated($date)
     {
-        return Carbon::parse($date)->format(config('app.locale') != 'en' ? 'd/m/Y' : 'm/d/Y');
+        return Carbon::parse($date)->format(config('app.locale') != 'en' ? 'd/m/Y H:i:s' : 'm/d/Y H:i:s');
     }
 }
