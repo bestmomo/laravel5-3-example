@@ -80,6 +80,26 @@ class FormBuilder extends \Collective\Html\FormBuilder
     }
 
     /**
+     * Manage checkbox
+     *
+     * @param  string $name
+     * @param  string $label
+     * @return string
+     */
+    public function check($name, $label)
+    {
+        return sprintf(
+            '<div class="checkbox col-lg-12">
+                <label>
+                    %s%s
+                </label>
+            </div>',
+            parent::checkbox($name),
+            $label
+        );
+    }
+    
+    /**
      * Manage checkbox horizontal
      *
      * @param  string $name
