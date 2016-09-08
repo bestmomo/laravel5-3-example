@@ -10,9 +10,9 @@
         @endif
         {!! Form::open(['url' => 'roles', 'method' => 'post', 'class' => 'form-horizontal panel']) !!} 
             @foreach ($roles as $role) 
-                {!! Form::control('text', 0, $role->slug, $errors, trans('back/roles.' . $role->slug), $role->title) !!}
+                {!! Form::controlBootstrap('text', 0, $role->slug, $errors, trans('back/roles.' . $role->slug), $role->title) !!}
             @endforeach
-            {!! Form::submit(trans('front/form.send')) !!}
+            {!! Form::submitBootstrap(trans('front/form.send')) !!}
         {!! Form::close() !!}
     </div>
 

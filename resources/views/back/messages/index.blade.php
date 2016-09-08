@@ -34,7 +34,7 @@
                             <td>{!! Form::checkbox('seen', $message->id, $message->seen) !!}</td>
                             <td>
                                 {!! Form::open(['method' => 'DELETE', 'route' => ['contact.destroy', $message->id]]) !!}
-                                    {!! Form::destroy(trans('back/messages.destroy'), trans('back/messages.destroy-warning'), 'btn-xs') !!}
+                                    {!! Form::destroyBootstrap(trans('back/messages.destroy'), trans('back/messages.destroy-warning'), 'btn-xs') !!}
                                 {!! Form::close() !!}
                             </td>
                         </tr>

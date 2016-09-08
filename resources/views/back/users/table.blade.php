@@ -7,7 +7,7 @@
         <td>{!! link_to_route('user.edit', trans('back/users.edit'), [$user->id], ['class' => 'btn btn-warning btn-block']) !!}</td>
         <td>
             {!! Form::open(['method' => 'DELETE', 'route' => ['user.destroy', $user->id]]) !!}
-                {!! Form::destroy(trans('back/users.destroy'), trans('back/users.destroy-warning')) !!}
+                {!! Form::destroyBootstrap(trans('back/users.destroy'), trans('back/users.destroy-warning')) !!}
             {!! Form::close() !!}
         </td>
     </tr>

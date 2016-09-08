@@ -20,7 +20,7 @@
                 </label>
             </div>
 
-            {!! Form::control('text', 0, 'title', $errors, trans('back/blog.title')) !!}
+            {!! Form::controlBootstrap('text', 0, 'title', $errors, trans('back/blog.title')) !!}
 
             <div class="form-group {!! $errors->has('slug') ? 'has-error' : '' !!}">
                 {!! Form::label('slug', trans('back/blog.permalink'), ['class' => 'control-label']) !!}
@@ -28,11 +28,11 @@
                 <small class="text-danger">{!! $errors->first('slug') !!}</small>
             </div>
 
-            {!! Form::control('textarea', 0, 'summary', $errors, trans('back/blog.summary')) !!}
-            {!! Form::control('textarea', 0, 'content', $errors, trans('back/blog.content')) !!}
-            {!! Form::control('text', 0, 'tags', $errors, trans('back/blog.tags'), isset($tags)? implode(',', $tags) : '') !!}
+            {!! Form::controlBootstrap('textarea', 0, 'summary', $errors, trans('back/blog.summary')) !!}
+            {!! Form::controlBootstrap('textarea', 0, 'content', $errors, trans('back/blog.content')) !!}
+            {!! Form::controlBootstrap('text', 0, 'tags', $errors, trans('back/blog.tags'), isset($tags)? implode(',', $tags) : '') !!}
 
-            {!! Form::submit(trans('front/form.send')) !!}
+            {!! Form::submitBootstrap(trans('front/form.send')) !!}
 
         {!! Form::close() !!}
     </div>

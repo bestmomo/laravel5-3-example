@@ -18,8 +18,8 @@
 
                 <div class="row">
 
-                    {!! Form::control('email', 6, 'email', $errors, trans('front/password.email')) !!}
-                    {!! Form::submit(trans('front/form.send'), ['col-lg-12']) !!}
+                    {!! Form::controlBootstrap('email', 6, 'email', $errors, trans('front/password.email')) !!}
+                    {!! Form::submitBootstrap(trans('front/form.send'), 'col-lg-12') !!}
                     {!! Form::text('address', '', ['class' => 'hpet']) !!}  
 
                 </div>

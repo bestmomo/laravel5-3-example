@@ -6,7 +6,7 @@
 
         <div class="col-lg-12">
             {!! Form::open(['url' => 'blog/search', 'method' => 'get', 'role' => 'form', 'class' => 'pull-right']) !!}  
-                {!! Form::control('text', 12, 'search', $errors, null, null, null, trans('front/blog.search')) !!}
+                {!! Form::controlBootstrap('text', 12, 'search', $errors, null, null, null, trans('front/blog.search')) !!}
             {!! Form::close() !!}
         </div>
 

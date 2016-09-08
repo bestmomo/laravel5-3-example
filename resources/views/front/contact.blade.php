@@ -10,11 +10,11 @@
                 <p>{{ trans('front/contact.text') }}</p>                
                 {!! Form::open(['url' => 'contact']) !!}  
                     <div class="row">
-                        {!! Form::control('text', 6, 'name', $errors, trans('front/contact.name')) !!}
-                        {!! Form::control('email', 6, 'email', $errors, trans('front/contact.email')) !!}
-                        {!! Form::control('textarea', 12, 'message', $errors, trans('front/contact.message')) !!}
+                        {!! Form::controlBootstrap('text', 6, 'name', $errors, trans('front/contact.name')) !!}
+                        {!! Form::controlBootstrap('email', 6, 'email', $errors, trans('front/contact.email')) !!}
+                        {!! Form::controlBootstrap('textarea', 12, 'message', $errors, trans('front/contact.message')) !!}
                         {!! Form::text('address', '', ['class' => 'hpet']) !!}      
-                        {!! Form::submit(trans('front/form.send'), ['col-lg-12']) !!}
+                        {!! Form::submitBootstrap(trans('front/form.send'), 'col-lg-12') !!}
                     </div>
                 {!! Form::close() !!}
             </div>

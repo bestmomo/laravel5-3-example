@@ -6,11 +6,11 @@
 
     <div class="col-sm-12">
         {!! Form::model($user, ['route' => ['user.update', $user->id], 'method' => 'put', 'class' => 'form-horizontal panel']) !!}
-            {!! Form::control('text', 0, 'username', $errors, trans('back/users.name')) !!}
-            {!! Form::control('email', 0, 'email', $errors, trans('back/users.email')) !!}
-            {!! Form::selection('role', $select, $user->role_id, trans('back/users.role')) !!}
-            {!! Form::checkHorizontal('confirmed', trans('back/users.confirmed'), $user->confirmed) !!}
-            {!! Form::submit(trans('front/form.send')) !!}
+            {!! Form::controlBootstrap('text', 0, 'username', $errors, trans('back/users.name')) !!}
+            {!! Form::controlBootstrap('email', 0, 'email', $errors, trans('back/users.email')) !!}
+            {!! Form::selectBootstrap('role', $select, $user->role_id, trans('back/users.role')) !!}
+            {!! Form::checkboxHorizontalBootstrap('confirmed', trans('back/users.confirmed'), $user->confirmed) !!}
+            {!! Form::submitBootstrap(trans('front/form.send')) !!}
         {!! Form::close() !!}
     </div>
 

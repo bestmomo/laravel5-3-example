@@ -16,7 +16,7 @@ class ResetPasswordRequest extends Request
         return [
             'token' => 'required',
             'email' => 'required',
-            'password' => 'bail|required|min:8|confirmed',
+            'password' => 'bail|required|min:6|confirmed',
         ];
     }
 }

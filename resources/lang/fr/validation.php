@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 return [
 
@@ -140,6 +140,10 @@ return [
         'time'                  => 'Heure',
         'available'             => 'Disponible',
         'size'                  => 'Taille',
+        'comments'              => 'Commentaire',
+        'slug'                  => 'Permalien',
+        'summary'               => 'Sommaire',
+        'log'                   => 'Connexion',
     ],
 
 ];

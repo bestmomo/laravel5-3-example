@@ -69,11 +69,11 @@ class UserTest extends TestCase
             ->see('Creation')
             ->type('My name', 'username')
             ->type('email@s', 'email')
-            ->type('0123456', 'password')
+            ->type('01', 'password')
             ->press('Send')
             ->see('The username may only contain letters')
             ->see('The email must be a valid email address')
-            ->see('The password must be at least 8 characters')
+            ->see('The password must be at least 6 characters')
             ->type(str_repeat('0123456789', 3) . '0', 'username')
             ->type('admin@la.fr', 'email')
             ->type('012345678', 'password')
@@ -115,7 +115,7 @@ class UserTest extends TestCase
         $this->loginAdmin();
 
         $this->visit('/user/blog-report')
-            ->see('Reports')
+            ->see('Blog Report')
             ->see('GreatAdmin')
             ->see('GreatRedactor');
     }

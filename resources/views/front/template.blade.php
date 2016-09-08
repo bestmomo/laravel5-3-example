@@ -125,7 +125,6 @@
                 $('#logout-form').submit();
             })
         });
-
     </script>
 
     @yield('scripts')

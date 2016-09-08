@@ -1,0 +1,1 @@
+{!! Form::submit($value, ['class' => 'btn btn-danger btn-block ' . $class, 'onclick' => 'return confirm(\'' . $message . '\')']) !!}

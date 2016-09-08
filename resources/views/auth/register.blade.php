@@ -11,19 +11,18 @@
 
                 {!! Form::open(['url' => 'register']) !!}	
 
-                <div class="row">
-                    {!! Form::control('text', 6, 'username', $errors, trans('front/register.pseudo'), null, [trans('front/register.warning'), trans('front/register.warning-name')]) !!}
-                    {!! Form::control('email', 6, 'email', $errors, trans('front/register.email')) !!}
-                </div>
-                <div class="row">	
-                    {!! Form::control('password', 6, 'password', $errors, trans('front/register.password'), null, [trans('front/register.warning'), trans('front/register.warning-password')]) !!}
-                    {!! Form::control('password', 6, 'password_confirmation', $errors, trans('front/register.confirm-password')) !!}
-                </div>
-                {!! Form::text('address', '', ['class' => 'hpet']) !!}	
-
-                <div class="row">	
-                    {!! Form::submit(trans('front/form.send'), ['col-lg-12']) !!}
-                </div>
+                    <div class="row">
+                        {!! Form::controlBootstrap('text', 6, 'username', $errors, trans('front/register.pseudo'), null, [trans('front/register.warning'), trans('front/register.warning-name')]) !!}
+                        {!! Form::controlBootstrap('email', 6, 'email', $errors, trans('front/register.email')) !!}
+                    </div>
+                    <div class="row">	
+                        {!! Form::controlBootstrap('password', 6, 'password', $errors, trans('front/register.password'), null, [trans('front/register.warning'), trans('front/register.warning-password')]) !!}
+                        {!! Form::controlBootstrap('password', 6, 'password_confirmation', $errors, trans('front/register.confirm-password')) !!}
+                    </div>
+                    {!! Form::text('address', '', ['class' => 'hpet']) !!}	
+                    <div class="row">	
+                        {!! Form::submitBootstrap(trans('front/form.send'), 'col-lg-12') !!}
+                    </div>
 
                 {!! Form::close() !!}
 

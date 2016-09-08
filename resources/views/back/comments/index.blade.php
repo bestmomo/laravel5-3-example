@@ -46,7 +46,7 @@
                             <td>{!! Form::checkbox('seen', $comment->id, $comment->seen) !!}</td>
                             <td>
                                 {!! Form::open(['method' => 'DELETE', 'route' => ['comment.destroy', $comment->id]]) !!}
-                                    {!! Form::destroy(trans('back/comments.destroy'), trans('back/comments.destroy-warning'), 'btn-xs') !!}
+                                    {!! Form::destroyBootstrap(trans('back/comments.destroy'), trans('back/comments.destroy-warning'), 'btn-xs') !!}
                                 {!! Form::close() !!}
                             </td>
                         </tr>

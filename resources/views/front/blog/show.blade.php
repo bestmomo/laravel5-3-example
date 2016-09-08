@@ -63,8 +63,8 @@
                         @if(session('statut') != 'visitor')
                             {!! Form::open(['url' => 'comment']) !!}    
                                 {!! Form::hidden('post_id', $post->id) !!}
-                                {!! Form::control('textarea', 12, 'comments', $errors, trans('front/blog.comment')) !!}
-                                {!! Form::submit(trans('front/form.send'), ['col-lg-12']) !!}
+                                {!! Form::controlBootstrap('textarea', 12, 'comments', $errors, trans('front/blog.comment')) !!}
+                                {!! Form::submitBootstrap(trans('front/form.send'), 'col-lg-12') !!}
                             {!! Form::close() !!}
                         @else
                             <div class="text-center"><i class="text-center">{{ trans('front/blog.info-comment') }}</i></div>

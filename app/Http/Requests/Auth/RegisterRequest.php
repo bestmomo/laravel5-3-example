@@ -16,7 +16,7 @@ class RegisterRequest extends Request
         return [
             'username' => 'bail|required|max:30|alpha|unique:users',
             'email' => 'bail|required|email|max:255|unique:users',
-            'password' => 'bail|required|min:3|confirmed',
+            'password' => 'bail|required|min:6|confirmed',
         ];
     }
 }
