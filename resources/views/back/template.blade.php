@@ -104,19 +104,38 @@
 
         {!! HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js') !!}
         {!! HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js') !!}
+        {!! HTML::script('/js/sweetalert.min.js') !!}
 
         <script>
 
             $(function() {
+
                 $('#logout').click(function(e) {
                     e.preventDefault();
                     $('#logout-form').submit();
                 });
+
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
+
+                $('.btn-destroy').on('click',function(e){
+                    e.preventDefault();
+                    var form = $(this).parents('form');
+                    swal({
+                        title: $(this).attr('data-title'),
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "{!! trans('front/site.yes') !!}",
+                        cancelButtonText: "{!! trans('front/site.no') !!}"
+                    }, function(isConfirm){
+                        if (isConfirm) form.submit();
+                    });
+                });
+
             });
 
         </script>

@@ -14,4 +14,6 @@ return [
     'logout' => 'Sair',
     'notification-endtext' => 'Se você está tendo problemas de clicar no botão, copie e cole o URL abaixo no seu navegador web:',
     'salutation' => 'Saudações',
+    'yes' => 'Sim',
+    'no' => 'Não',
 ];

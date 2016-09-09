@@ -10,7 +10,8 @@ It's an upgrade of [this repository](https://github.com/bestmomo/laravel5-exampl
 * `cd projectname`
 * `composer install`
 * `touch database/database.sqlite`
-* Copy *.env.example* to *.env*; set DB_DATABASE to the absolute path of the file created above
+* Copy *.env.example* to *.env*
+* Set DB_DATABASE to the absolute path of the file created above
 * `php artisan key:generate`
 * `php artisan migrate --seed` to create and populate tables
 * Edit *.env* for emails configuration
@@ -26,6 +27,7 @@ It's an upgrade of [this repository](https://github.com/bestmomo/laravel5-exampl
 * [Elfinder](https://github.com/Studio-42/elFinder) the nice file manager
 * [laravel-lipsum](https://github.com/magyarjeti/laravel-lipsum) for the lipsum generator
 * [Laravel Collective](https://laravelcollective.com/) for Forms and Html 
+* [Sweat Alert](http://t4t5.github.io/sweetalert/) for the cool alerts
 
 ### Features ###
 

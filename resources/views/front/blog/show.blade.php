@@ -168,20 +168,31 @@
 
                 // Delete comment
                 $('a.deletecomment').click(function(e) {   
-                    e.preventDefault();     
-                    if (!confirm('{{ trans('front/blog.confirm') }}')) return;  
-                    var i = $(this).attr('id').substring(13);
-                    $(this).replaceWith('<i class="fa fa-refresh fa-spin pull-right"></i>');
-                    $.ajax({
-                        method: 'delete',
-                        url: '{!! url('comment') !!}' + '/' + i
-                    })
-                    .done(function(data) {
-                        $('#comment' + data.id).parents('.commentitem').remove();
-                    })
-                    .fail(function() {
-                        alert('{{ trans('front/blog.fail-delete') }}');
-                    });                 
+                    e.preventDefault(); 
+                    var that = $(this);
+                    swal({
+                        title: "{!! trans('front/blog.confirm') !!}",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "{!! trans('front/site.yes') !!}",
+                        cancelButtonText: "{!! trans('front/site.no') !!}"
+                    }, function(isConfirm) {
+                        if (isConfirm) {
+                            var i = that.attr('id').substring(13);
+                            that.replaceWith('<i class="fa fa-refresh fa-spin pull-right"></i>');
+                            $.ajax({
+                                method: 'delete',
+                                url: '{!! url('comment') !!}' + '/' + i
+                            })
+                            .done(function(data) {
+                                $('#comment' + data.id).parents('.commentitem').remove();
+                            })
+                            .fail(function() {
+                                alert('{!! trans('front/blog.fail-delete') !!}');
+                            }); 
+                        }                
+                    });
                 });
 
             });
