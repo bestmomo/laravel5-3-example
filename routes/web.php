@@ -54,3 +54,7 @@ Auth::routes();
 // Email confirmation 
 Route::get('resend', 'Auth\RegisterController@resend');
 Route::get('confirm/{token}', 'Auth\RegisterController@confirm');
+
+// Notifications
+Route::get('notifications/{user}', 'NotificationController@index');
+Route::put('notifications/{notification}', 'NotificationController@update');

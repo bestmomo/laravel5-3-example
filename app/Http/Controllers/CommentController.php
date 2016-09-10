@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CommentRequest;
 use Illuminate\Http\Request;
 use App\Repositories\CommentRepository;
+use App\Repositories\BlogRepository;
+use App\Notifications\Commented;
+use Carbon\Carbon;
 
 class CommentController extends Controller
 {
@@ -45,17 +48,22 @@ class CommentController extends Controller
      * Store a newly created comment in storage.
      *
      * @param  \App\requests\CommentRequest $request
+     * @param  \App\Repositories\BlogRepository $blogRepository
      * @return \Illuminate\Http\Response
      */
-    public function store(CommentRequest $request)
+    public function store(CommentRequest $request, BlogRepository $blogRepository)
     {
         $this->commentRepository->store($request->all(), $request->user()->id);
 
-        if ($request->user()->valid) {
-            return back();
+        $blog = $blogRepository->getById($request->post_id);
+        
+        $blog->user->notify(new Commented($blog));
+        
+        if (!$request->user()->valid) {
+            $request->session()->flash('warning', trans('front/blog.warning'));
         }
 
-        return back()->with('warning', trans('front/blog.warning'));
+        return back();
     }
 
     /**

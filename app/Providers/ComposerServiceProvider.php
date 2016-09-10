@@ -19,6 +19,13 @@ class ComposerServiceProvider extends ServiceProvider
                 $view->with(resolve('App\Repositories\RoleRepository')->allSelect());
             }
         );
+
+        view()->composer(
+            ['back.blog.create', 'back.blog.edit', 'back.blog.index', 'back.filemanager', 'back.notifications.index'], 
+            function ($view) {
+                $view->with(['notifications' => session('statut') == 'redac' && !auth()->user()->unreadNotifications->isEmpty()]);
+            }
+        );
     }
 
     /**

@@ -45,7 +45,7 @@ It's an upgrade of [this repository](https://github.com/bestmomo/laravel5-exampl
 * Multi users medias gestion
 * Localization
 * Application tests
-* Use of new notifications to send emails
+* Use of new notifications to send emails and notify redactors for new comments
 
 ### Assets ###
 

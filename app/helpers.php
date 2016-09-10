@@ -43,3 +43,11 @@ if (!function_exists('classActiveOnlySegment')) {
         return '';
     }
 }
+
+if (!function_exists('formatDate')) {
+    function formatDate($date)
+    {
+        return \Carbon\Carbon::parse($date)->format(config('app.locale') != 'en' ? 'd/m/Y H:i:s' : 'm/d/Y H:i:s');
+    }
+}
+

@@ -86,6 +86,9 @@
                                 <li><a href="{!! url('blog/create') !!}">{{ trans('back/admin.add') }}</a></li>
                             </ul>
                         </li>
+                        @if(!empty($notifications))
+                            <li><a href="{!! url('notifications/' . auth()->id()) !!}"><span class="fa fa-fw fa-bell-o"></span> Notifications</a></li>
+                        @endif
                     </ul>
                 </div>
             </nav>
