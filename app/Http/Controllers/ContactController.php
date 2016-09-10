@@ -75,7 +75,7 @@ class ContactController extends Controller
     {
         $this->contactRepository->update($request->input('seen'), $id);
 
-        return ['statut' => 'ok'];
+        return response()->json();
     }
 
     /**
