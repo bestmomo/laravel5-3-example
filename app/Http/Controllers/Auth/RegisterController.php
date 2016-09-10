@@ -71,8 +71,6 @@ class RegisterController extends Controller
 
             $this->notifyUser($user);
             
-            $user->notify(new ConfirmEmail($user->confirmation_code));
-
             return redirect('/')->with('ok', trans('front/verify.resend'));
         }
 
