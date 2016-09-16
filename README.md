@@ -25,7 +25,7 @@ It's an upgrade of [this repository](https://github.com/bestmomo/laravel5-exampl
 
 ### Installation (the fast way) ###
 
-Upload [this zip file](http://laravel.sillo.org/tuto/laravel5-3-example.zip) and unzip it in your folder. It's done with sqlite database ! You can make an *composer update* to refresh vendor.
+Upload [this zip file](http://laravel.sillo.org/tuto/laravel5-3-example.zip) and unzip it in your folder. It's done with sqlite database ! You can make a *composer update* to refresh vendor.
 
 ### Include ###
 
