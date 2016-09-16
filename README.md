@@ -19,7 +19,6 @@ It's an upgrade of [this repository](https://github.com/bestmomo/laravel5-exampl
    * set DB_PASSWORD
 * if you use sqlite :
    * type `touch database/database.sqlite` to create the file
-   * set DB_DATABASE in *.env* file to the absolute path of the file created above
 * type `php artisan migrate --seed` to create and populate tables
 * edit *.env* for emails configuration
 * optionaly type `npm install` to manage assets
