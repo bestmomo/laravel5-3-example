@@ -4,7 +4,7 @@
 
 It's an upgrade of [this repository](https://github.com/bestmomo/laravel5-example) for Laravel 5.3 with big code cleaning and refactoring and application tests.
 
-### Installation ###
+### Installation (the slow way) ###
 
 * type `git clone https://github.com/bestmomo/laravel5-3-example.git projectname` to clone the repository 
 * type `cd projectname`
@@ -22,6 +22,10 @@ It's an upgrade of [this repository](https://github.com/bestmomo/laravel5-exampl
 * type `php artisan migrate --seed` to create and populate tables
 * edit *.env* for emails configuration
 * optionaly type `npm install` to manage assets
+
+### Installation (the fast way) ###
+
+Upload [this zip file](http://laravel.sillo.org/tuto/laravel5-3-example.zip) and unzip it in your folder. It's done with sqlite database ! You can make an *composer update* to refresh vendor.
 
 ### Include ###
 
