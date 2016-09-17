@@ -1,14 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Model;
-use App\Models\Role;
-use App\Models\User;
-use App\Models\Contact;
-use App\Models\Post;
-use App\Models\Tag;
-use App\Models\PostTag;
-use App\Models\Comment;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,95 +11,82 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
 
-        Role::create([
-            'title' => 'Administrator',
-            'slug' => 'admin',
+        DB::table('roles')->insert([
+
+            ['title' => 'Administrator', 'slug' => 'admin'],
+            ['title' => 'Redactor', 'slug' => 'redac'],
+            ['title' => 'User', 'slug' => 'user']
+
         ]);
 
-        Role::create([
-            'title' => 'Redactor',
-            'slug' => 'redac',
-        ]);
+        DB::table('users')->insert([
 
-        Role::create([
-            'title' => 'User',
-            'slug' => 'user',
-        ]);
-
-        User::create([
-            'username' => 'GreatAdmin',
+            ['username' => 'GreatAdmin',
             'email' => 'admin@la.fr',
             'password' => bcrypt('admin'),
             'seen' => true,
             'role_id' => 1,
-            'confirmed' => true,
-        ]);
+            'valid' => true,
+            'confirmed' => true],
 
-        User::create([
-            'username' => 'GreatRedactor',
+            ['username' => 'GreatRedactor',
             'email' => 'redac@la.fr',
             'password' => bcrypt('redac'),
             'seen' => true,
             'role_id' => 2,
             'valid' => true,
-            'confirmed' => true,
-        ]);
+            'confirmed' => true],
 
-        User::create([
-            'username' => 'Walker',
+            ['username' => 'Walker',
             'email' => 'walker@la.fr',
             'password' => bcrypt('walker'),
+            'seen' => false,
             'role_id' => 3,
-            'confirmed' => true,
-        ]);
+            'valid' => false,
+            'confirmed' => true],
 
-        User::create([
-            'username' => 'Slacker',
+            ['username' => 'Slacker',
             'email' => 'slacker@la.fr',
             'password' => bcrypt('slacker'),
+            'seen' => false,
             'role_id' => 3,
-            'confirmed' => true,
+            'valid' => false,
+            'confirmed' => true]
+
         ]);
 
-        Contact::create([
-            'name' => 'Dupont',
+        DB::table('contacts')->insert([
+
+            ['name' => 'Dupont',
             'email' => 'dupont@la.fr',
             'message' => Lipsum::short()->text(2),
-        ]);
+            'seen' => false],
 
-        Contact::create([
-            'name' => 'Durand',
+            ['name' => 'Durand',
             'email' => 'durand@la.fr',
             'message' => Lipsum::short()->text(2),
-        ]);
+            'seen' => false],
 
-        Contact::create([
-            'name' => 'Martin',
+            ['name' => 'Martin',
             'email' => 'martin@la.fr',
             'message' => Lipsum::short()->text(2),
-            'seen' => true,
+            'seen' => true]
+            
         ]);
 
-        Tag::create([
-            'tag' => 'Tag1',
+        DB::table('tags')->insert([
+
+            ['tag' => 'Tag1'],
+            ['tag' => 'Tag2'],
+            ['tag' => 'Tag3'],
+            ['tag' => 'Tag4']
+
         ]);
 
-        Tag::create([
-            'tag' => 'Tag2',
-        ]);
+        DB::table('posts')->insert([
 
-        Tag::create([
-            'tag' => 'Tag3',
-        ]);
-
-        Tag::create([
-            'tag' => 'Tag4',
-        ]);
-
-        Post::create([
-            'title' => 'Post 1',
+            ['title' => 'Post 1',
             'slug' => 'post-1',
             'summary' => '<img alt="" src="/files/user2/mega-champignon.png" style="float:left; height:128px; width:128px" />' . Lipsum::short()->html(2),
             'content' => Lipsum::medium()->html(2) . '<pre>
@@ -125,92 +104,58 @@ class DatabaseSeeder extends Seeder
     }
 }</code></pre>' . Lipsum::medium()->html(2),
             'active' => true,
-            'user_id' => 1,
-        ]);
+            'user_id' => 1],
 
-        Post::create([
-            'title' => 'Post 2',
+            ['title' => 'Post 2',
             'slug' => 'post-2',
             'summary' => '<img alt="" src="/files/user2/goomba.png" style="float:left; height:128px; width:128px" />' . Lipsum::short()->html(2),
             'content' => Lipsum::medium()->link()->html(8),
             'active' => true,
-            'user_id' => 2,
-        ]);
+            'user_id' => 2],
 
-        Post::create([
-            'title' => 'Post 3',
+            ['title' => 'Post 3',
             'slug' => 'post-3',
             'summary' => '<img alt="" src="/files/user2/rouge-shell.png" style="float:left; height:128px; width:128px" />' . Lipsum::short()->html(2),
             'content' => Lipsum::medium()->link()->html(8),
             'active' => true,
-            'user_id' => 2,
-        ]);
+            'user_id' => 2],
 
-        Post::create([
-            'title' => 'Post 4',
+            ['title' => 'Post 4',
             'slug' => 'post-4',
             'summary' => '<img alt="" src="/files/user2/rouge-shyguy.png" style="float:left; height:128px; width:128px" />' . Lipsum::short()->html(2),
             'content' => Lipsum::medium()->link()->html(8),
             'active' => true,
+            'user_id' => 2]
+
+        ]);
+
+        DB::table('post_tag')->insert([
+
+            ['post_id' => 1, 'tag_id' => 1],
+            ['post_id' => 1, 'tag_id' => 2],
+            ['post_id' => 2, 'tag_id' => 1],
+            ['post_id' => 2, 'tag_id' => 2],
+            ['post_id' => 2, 'tag_id' => 3],
+            ['post_id' => 3, 'tag_id' => 1],
+            ['post_id' => 3, 'tag_id' => 2],
+            ['post_id' => 3, 'tag_id' => 4]
+
+        ]);
+
+        DB::table('comments')->insert([
+
+            ['content' => Lipsum::medium()->text(3),
             'user_id' => 2,
-        ]);
+            'post_id' => 1],
 
-        PostTag::create([
-            'post_id' => 1,
-            'tag_id' => 1,
-        ]);
-
-        PostTag::create([
-            'post_id' => 1,
-            'tag_id' => 2,
-        ]);
-
-        PostTag::create([
-            'post_id' => 2,
-            'tag_id' => 1,
-        ]);
-
-        PostTag::create([
-            'post_id' => 2,
-            'tag_id' => 2,
-        ]);
-
-        PostTag::create([
-            'post_id' => 2,
-            'tag_id' => 3,
-        ]);
-
-        PostTag::create([
-            'post_id' => 3,
-            'tag_id' => 1,
-        ]);
-
-        PostTag::create([
-            'post_id' => 3,
-            'tag_id' => 2,
-        ]);
-
-        PostTag::create([
-            'post_id' => 3,
-            'tag_id' => 4,
-        ]);
-
-        Comment::create([
-            'content' => Lipsum::medium()->text(3),
+            ['content' =>Lipsum::medium()->text(2),
             'user_id' => 2,
-            'post_id' => 1,
-        ]);
+            'post_id' => 2],
 
-        Comment::create([
-            'content' =>Lipsum::medium()->text(2),
-            'user_id' => 2,
-            'post_id' => 2,
-        ]);
-
-        Comment::create([
-            'content' => Lipsum::medium()->text(3),
+            ['content' => Lipsum::medium()->text(3),
             'user_id' => 3,
-            'post_id' => 1,
+            'post_id' => 1]
+
         ]);
     }
 }
