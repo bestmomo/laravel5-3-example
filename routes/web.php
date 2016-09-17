@@ -1,9 +1,5 @@
 <?php
 
-Route::get('/test', function () {
-    $exitCode = \Artisan::call('route:list');
-});
-
 // Home
 Route::get('/', 'HomeController')->name('home');
 
