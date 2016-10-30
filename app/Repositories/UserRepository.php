@@ -8,7 +8,6 @@ use App\Models\Role;
 
 class UserRepository extends BaseRepository
 {
-
     /**
      * The Role instance.
      *
@@ -174,12 +173,14 @@ class UserRepository extends BaseRepository
     {
         $user->comments()->delete();
 
-        $posts = $user->posts()->get();
+        $user->posts()->delete();
+
+/*        $posts = $user->posts()->get();
 
         foreach ($posts as $post) {
             $post->tags()->detach();
             $post->delete();
-        }
+        }*/
         
         $user->delete();
     }
