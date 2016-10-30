@@ -174,13 +174,6 @@ class UserRepository extends BaseRepository
         $user->comments()->delete();
 
         $user->posts()->delete();
-
-/*        $posts = $user->posts()->get();
-
-        foreach ($posts as $post) {
-            $post->tags()->detach();
-            $post->delete();
-        }*/
         
         $user->delete();
     }
