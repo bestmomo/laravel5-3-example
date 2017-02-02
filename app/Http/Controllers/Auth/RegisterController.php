@@ -69,7 +69,7 @@ class RegisterController extends Controller
         if ($request->session()->has('user_id')) {
             $user = $userRepository->getById($request->session()->get('user_id'));
 
-            $this->notifyUser($user);
+            $user->notify(new ConfirmEmail());
             
             return redirect('/')->with('ok', trans('front/verify.resend'));
         }
