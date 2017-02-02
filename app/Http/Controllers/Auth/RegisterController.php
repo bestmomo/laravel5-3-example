@@ -38,7 +38,7 @@ class RegisterController extends Controller
             str_random(30)
         );
 
-        $this->notifyUser($user);
+        $user->notify(new ConfirmEmail());
 
         return redirect('/')->with('ok', trans('front/verify.message'));
     }
@@ -75,16 +75,5 @@ class RegisterController extends Controller
         }
 
         return redirect('/');
-    }
-
-    /**
-     * Notify user with email
-     *
-     * @param  \App\Models\User  $user
-     * @return void
-     */
-    protected function notifyUser(User $user)
-    {
-        $user->notify(new ConfirmEmail($user->confirmation_code));
     }
 }

@@ -12,24 +12,6 @@ class ConfirmEmail extends Notification implements ShouldQueue
     use Queueable;
 
     /**
-     * The password reset token.
-     *
-     * @var string
-     */
-    public $confirmation_code;
-
-    /**
-     * Create a notification instance.
-     *
-     * @param  string  $confirmation_code
-     * @return void
-     */
-    public function __construct($confirmation_code)
-    {
-        $this->confirmation_code = $confirmation_code;
-    }
-    
-    /**
      * Get the notification's delivery channels.
      *
      * @param  mixed  $notifiable
@@ -52,6 +34,6 @@ class ConfirmEmail extends Notification implements ShouldQueue
             ->subject(trans('front/verify.email-title'))
             ->line(trans('front/verify.email-title'))
             ->line(trans('front/verify.email-intro'))
-            ->action(trans('front/verify.email-button'), url('confirm/' . $this->confirmation_code));
+            ->action(trans('front/verify.email-button'), url('confirm/' . $notifiable->confirmation_code));
     }
 }
