@@ -86,6 +86,7 @@
 
     @if(session('statut') != 'visitor')
         {!! HTML::script('ckeditor/ckeditor.js') !!}
+        {!! HTML::script('js/sweetalert.min.js') !!}
     @endif
 
     <script>      
