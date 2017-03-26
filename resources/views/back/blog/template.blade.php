@@ -8,7 +8,7 @@
 
 @section('main')
 
-    @include('back.partials.entete', ['title' => trans('back/blog.dashboard'), 'icon' => 'pencil', 'fil' => link_to('blog', trans('back/blog.posts')) . ' / ' . trans('back/blog.creation')])
+    @yield('entete')
 
     <div class="col-sm-12">
         @yield('form')
