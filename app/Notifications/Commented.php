@@ -15,14 +15,22 @@ class Commented extends Notification
     protected $post;
 
     /**
+     * User id property.
+     *
+     * @var integer
+     */
+    protected $user_id;
+
+    /**
      * Create a new notification instance.
      *
-     * @param \App\Models\Post
-     * @return void
+     * @param Post $post
+     * @param integer $user_id
      */
-    public function __construct(Post $post)
+    public function __construct(Post $post, $user_id)
     {
         $this->post = $post;
+        $this->user_id = $user_id;
     }
 
     /**
@@ -47,6 +55,7 @@ class Commented extends Notification
         return [
             'title' => $this->post->title,
             'slug' => $this->post->slug,
+            'user_id' => $this->user_id,
         ];
     }
 }

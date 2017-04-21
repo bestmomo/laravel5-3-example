@@ -51,3 +51,9 @@ if (!function_exists('formatDate')) {
     }
 }
 
+if (!function_exists('userValid')) {
+    function userValid($id)
+    {
+        return \App\Models\User::findOrFail($id)->valid;
+    }
+}

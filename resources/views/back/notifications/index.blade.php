@@ -20,7 +20,7 @@
                 <tr>
                   <td>{!! link_to('blog/' . $notification->data['slug'], $notification->data['title']) !!}</td>
                   <td>{{ formatDate($notification->created_at) }}</td> 
-                  <td>{!! Form::checkbox(trans('valid'), null, $user->valid, ['disabled' => true]) !!}</td>
+                  <td>{!! Form::checkbox(trans('valid'), null, userValid($notification->data['user_id']), ['disabled' => true]) !!}</td>
                   <td>
                     {!! Form::open(['method' => 'PUT', 'url' => 'notifications/' . $notification->id]) !!}
                       {!! Form::submit(trans('back/notifications.erase'), ['class' => 'btn btn-success btn-block']) !!}

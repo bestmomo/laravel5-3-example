@@ -57,7 +57,7 @@ class CommentController extends Controller
 
         $blog = $blogRepository->getById($request->post_id);
         
-        $blog->user->notify(new Commented($blog));
+        $blog->user->notify(new Commented($blog, $request->user()->id));
         
         if (!$request->user()->valid) {
             $request->session()->flash('warning', trans('front/blog.warning'));
