@@ -84,3 +84,7 @@ Then migrate and seed :
 `php artisan migrate --seed`
 
 You can then use PHPUnit
+
+### License ###
+
+This example for Laravel is open-sourced software licensed under the MIT license
